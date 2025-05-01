@@ -28,7 +28,8 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
-    const workspacePath = process.env.WORKSPACE_PATH || ''
+    const workspacePath = "/Users/caroline/Library/Application Support/Cursor/User/workspaceStorage"
+    // const workspacePath = process.env.WORKSPACE_PATH || ''
     const dbPath = path.join(workspacePath, params.id, 'state.vscdb')
 
     const db = await open({
@@ -65,7 +66,8 @@ export async function GET(
     }
 
     if (composerResult) {
-      const globalDbPath = path.join(workspacePath, '..', 'globalStorage', 'state.vscdb')
+      const globalDbPath = "/Users/caroline/Library/Application Support/Cursor/User/globalStorage/state.vscdb"
+      // const globalDbPath = path.join(workspacePath, '..', 'globalStorage', 'state.vscdb')
       const composers: ComposerData = JSON.parse(composerResult.value)
       const keys = composers.allComposers.map((it) => `composerData:${it.composerId}`)
       const placeholders = keys.map(() => '?').join(',')

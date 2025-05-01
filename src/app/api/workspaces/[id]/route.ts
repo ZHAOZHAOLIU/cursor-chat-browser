@@ -8,7 +8,7 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
-    const workspacePath = process.env.WORKSPACE_PATH || ''
+    const workspacePath = "/Users/caroline/Library/Application Support/Cursor/User/workspaceStorage"
     const dbPath = path.join(workspacePath, params.id, 'state.vscdb')
     const workspaceJsonPath = path.join(workspacePath, params.id, 'workspace.json')
 

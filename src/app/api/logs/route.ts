@@ -18,7 +18,8 @@ interface WorkspaceLog {
 
 export async function GET() {
   try {
-    const workspacePath = process.env.WORKSPACE_PATH || ''
+    const workspacePath = "/Users/caroline/Library/Application Support/Cursor/User/workspaceStorage";
+    // const workspacePath = process.env.WORKSPACE_PATH || ''
     const logs: WorkspaceLog[] = []
     
     const entries = await fs.readdir(workspacePath, { withFileTypes: true })
